@@ -1,14 +1,18 @@
 body {
   background-color: #f3767c;
+  overflow: hidden;
 }
 .App {
   font-family: sans-serif;
   text-align: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 .calculator {
   display: inline-block;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  width: auto;
+  margin: 1rem auto;
   background-image: linear-gradient(-120deg, #1e1c1f, #39393a);
   padding: 1rem;
   border-radius: 10px;
@@ -17,23 +21,24 @@ body {
 .calculator:before {
   content: "";
   display: block;
-
   width: 200%;
-  top: 9.9rem;
+  top: 9.5rem;
   left: 6.6rem;
   background-image: linear-gradient(to right, #b4353c, #f3767c);
   z-index: -1;
-  height: 123.9%;
+  height: 124%;
   /*   transform-origin: 100% 100%; */
-  transform: rotate(37deg);
+  transform: rotate(36deg);
   position: absolute;
   border: none;
+  border-radius: 1rem;
 }
 .screen {
   background-color: #c9d7c7;
-  height: 5rem;
+  height: 3rem;
   margin-bottom: 1rem;
   border-radius: 5px;
+  padding: 1rem;
 }
 .keys {
   display: grid;
@@ -46,6 +51,13 @@ body {
   border-radius: 3px;
   cursor: pointer;
   outline: none;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
 }
 
 .key:active {
@@ -54,4 +66,62 @@ body {
   -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
   box-shadow: inset 0px 0px 5px #c1c1c1;
   outline: none;
+  font-size: 0.78rem;
+}
+p {
+  margin: 0;
+  text-align: right;
+}
+p:first-of-type {
+  color: gray;
+}
+p:last-of-type {
+  font-size: 1.5rem;
+}
+.equals {
+  grid-row: 5 / span 1;
+  grid-column: 3 / span 2;
+}
+.back {
+  grid-row: 1 / span 1;
+  grid-column: 4 / span 1;
+}
+.zero {
+  grid-row: 5 / span 1;
+  grid-column: 2 / span 1;
+}
+.plus {
+  grid-row: 2 / span 2;
+  grid-column: 4;
+}
+.one {
+  grid-row: 4 / span 1;
+  grid-column: 1;
+}
+
+.c {
+  grid-row: 5 / span 1;
+  grid-column: 1;
+}
+.two {
+  grid-row: 4 / span 1;
+  grid-column: 2;
+}
+.divide {
+  grid-row: 1;
+  grid-column: 1;
+}
+.decimal {
+  grid-row: 4 / span 1;
+  grid-column: 4;
+}
+.four {
+  grid-row: 3;
+}
+.six {
+  grid-column: 3;
+}
+.five {
+  grid-row: 3;
+  grid-column: 2;
 }
