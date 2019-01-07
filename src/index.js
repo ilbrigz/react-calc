@@ -10,22 +10,27 @@ class App extends React.Component {
         <div className="calculator">
           <div className="screen">screen</div>
           <div className="keys">
-            <button className="key">1</button>
-            <button className="key">2</button>
-            <button className="key">3</button>
-            <button className="key">4</button>
-            <button className="key">5</button>
-            <button className="key">6</button>
-            <button className="key">7</button>
-            <button className="key">8</button>
-            <button className="key">9</button>
-            <button className="key">0</button>
-            <button className="key">.</button>
-            <button className="key">x</button>
-            <button className="key">+</button>
-            <button className="key">-</button>
-            <button className="key">/</button>
-            <button className="key" style={{ backgroundColor: "#F15A2B" }}>
+            <button className="key one">1</button>
+            <button className="key two">2</button>
+            <button className="key three">3</button>
+            <button className="key four">4</button>
+            <button className="key five">5</button>
+            <button className="key six">6</button>
+            <button className="key seven">7</button>
+            <button className="key eight">8</button>
+            <button className="key nine">9</button>
+            <button className="key zero">0</button>
+            <button className="key decimal">.</button>
+            <button className="key times">x</button>
+            <button className="key plus">+</button>
+            <button className="key minus">-</button>
+            <button className="key divide">/</button>
+            <button className="key back">Back</button>
+            <button className="key c">C</button>
+            <button
+              className="key equals"
+              style={{ backgroundColor: "#F15A2B" }}
+            >
               =
             </button>
           </div>
