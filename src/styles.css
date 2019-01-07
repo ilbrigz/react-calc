@@ -1,18 +1,17 @@
 body {
   background-color: #f3767c;
-  overflow: hidden;
 }
 .App {
   font-family: sans-serif;
   text-align: center;
   width: 100%;
-  height: 100vh;
+  min-height: 35rem;
   overflow: hidden;
 }
 .calculator {
   display: inline-block;
   width: auto;
-  margin: 1rem auto;
+  margin: 3rem auto;
   background-image: linear-gradient(-120deg, #1e1c1f, #39393a);
   padding: 1rem;
   border-radius: 10px;
@@ -42,7 +41,7 @@ body {
 }
 .keys {
   display: grid;
-  grid-template-columns: repeat(4, minmax(60px, 80px));
+  grid-template-columns: repeat(4, minmax(50px, 80px));
   grid-gap: 3px;
 }
 .key {

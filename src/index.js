@@ -14,6 +14,9 @@ class App extends React.Component {
   }
   handleClick(value) {
     this.setState(state => {
+      if (state.answer == 0 && value.search(/\/$|\*$/) !== -1) {
+        return { answer: "0" };
+      }
       if (
         state.answer.search(/\+$|\/$|\*$|\-$/) !== -1 &&
         value.search(/\+$|\/$|\*$|\-$/) !== -1
@@ -27,6 +30,9 @@ class App extends React.Component {
   }
   calculate() {
     this.setState(prevState => {
+      if (prevState.answer.search(/\+$|\/$|\*$|\-$/) !== -1) {
+        return;
+      }
       const calculation = prevState.answer;
       const answer = eval(prevState.answer).toString();
       return { calculation, answer };
