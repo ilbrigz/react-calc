@@ -18,19 +18,50 @@ class App extends React.Component {
         return { answer: "0" };
       }
       if (
-        state.answer.search(/\+$|\/$|\*$|\-$/) !== -1 &&
-        value.search(/\+$|\/$|\*$|\-$/) !== -1
+        (state.answer.search(/[\+\/\*\-]$/) !== -1 &&
+          value.search(/[\+\/\*\-]$/) !== -1) ||
+        (value == "." &&
+          state.answer
+            .split("+")
+            .join(",")
+            .split("-")
+            .join(",")
+            .split("/")
+            .join(",")
+            .split("*")
+            .join(",")
+            .split(",")
+            [
+              state.answer
+                .split("+")
+                .join(",")
+                .split("-")
+                .join(",")
+                .split("/")
+                .join(",")
+                .split("*")
+                .join(",")
+                .split(",").length - 1
+            ].includes("."))
       ) {
         return;
       }
       // if (state.answer[state.answer.length - 1].match(/[^ 0 - 9]/)){return};
-      let answer = state.answer == 0 ? value : state.answer + "" + value;
+      let answer =
+        state.answer === "0"
+          ? value === "."
+            ? state.answer + "" + value
+            : value
+          : state.answer + "" + value;
       return { answer: answer };
     });
   }
   calculate() {
     this.setState(prevState => {
       if (prevState.answer.search(/\+$|\/$|\*$|\-$/) !== -1) {
+        return;
+      }
+      if (prevState.answer.search(/\+\.$|\/\.$|\*\.$|\-\.$/) !== -1) {
         return;
       }
       const calculation = prevState.answer;

@@ -6,7 +6,6 @@ body {
   text-align: center;
   width: 100%;
   min-height: 35rem;
-  overflow: hidden;
 }
 .calculator {
   display: inline-block;
@@ -122,5 +121,12 @@ p:last-of-type {
 }
 .five {
   grid-row: 3;
+  grid-column: 2;
+}
+.seven {
+  grid-row: 2;
+}
+.eight {
+  grid-row: 2;
   grid-column: 2;
 }
